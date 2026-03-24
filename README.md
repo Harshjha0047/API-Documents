@@ -11,7 +11,7 @@ This document outlines the usage of the 2Factor V1 API endpoint for sending DLT-
 
 Triggers an SMS to a specified mobile number using a pre-approved DLT template.
 
-**Endpoint:** `GET /API/V1/{api_key}/SMS/{phone_number}/{otp_value}/{template_name}`
+**Endpoint:** `GET /API/V1/{api_key}/SMS/{phone_number}/{otp_value}/{template_name}?var1={var_value}`
 
 ### Path Parameters
 
@@ -27,14 +27,7 @@ Triggers an SMS to a specified mobile number using a pre-approved DLT template.
 | Parameter | Type | Description | Required |
 | :--- | :--- | :--- | :--- |
 | `var1` | `string` | The value to inject into the second `{#var#}` placeholder in your template (e.g., App Name or Order ID). | Optional* |
-| `var2` | `string` | The value to inject into the third `{#var#}` placeholder. | Optional* |
 
 *\*Note: Query parameters are required only if your specific DLT template contains more than one `{#var#}` placeholder.*
 
 ---
-
-## Example Usage
-
-### HTTP Request (Test Case)
-```http
-GET [https://2factor.in/API/V1/f8014850-2391-11f1-bcb0-0200cd936042/SMS/9910780592/000000/OTP_GoRevive?var1=TESTING](https://2factor.in/API/V1/f8014850-2391-11f1-bcb0-0200cd936042/SMS/9910780592/000000/OTP_GoRevive?var1=TESTING)
